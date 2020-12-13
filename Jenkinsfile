@@ -5,14 +5,16 @@ pipeline {
         pollSCM('* * * * *')
     }
 
-    stage("Fix the permission issue") {
+    
+
+    stages {
+
+        stage("Fix the permission issue") {
             steps {
                 sh "sudo chown root:jenkins /run/docker.sock"
             }
 
-    }
-    
-    stages {
+         }   
         stage('Compile Stage') {
             steps {
                 echo '::::: Hello, Compile  :::::'
