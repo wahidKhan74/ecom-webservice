@@ -39,7 +39,15 @@ pipeline {
         stage('Deploy Stage') {
             steps {
                 echo 'Hello, Docker Deployment.'
-                
+                sh '''
+                 (if  [ $(docker ps -a | grep ecom-webservice | cut -d " " -f1) ]; then \
+                        echo $(docker rm -f ecom-webservice); \
+                        echo "---------------- successfully removed ecom-webservice ----------------"
+                     else \
+                    echo OK; \
+                 fi;);
+            docker container run --restart always --name ecom-webservice -d ecom-webservice
+            '''
             }
         }
     }
