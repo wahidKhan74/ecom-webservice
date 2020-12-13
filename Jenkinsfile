@@ -31,7 +31,7 @@ pipeline {
             steps {
                 echo ':::::  Hello, Docker Build Stage   :::::'
                 sh '''
-                    sudo docker image build -t ecom-webservice .
+                    docker image build -t ecom-webservice .
                 '''
             }
         }
