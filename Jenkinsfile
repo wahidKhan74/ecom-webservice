@@ -28,15 +28,15 @@ pipeline {
             steps {
                 echo ':::::  Hello, Docker Build Stage   :::::'
                 sh '''
-                    docker image build -t ecom-webservice .
+                    sudo docker image build -t ecom-webservice .
                 '''
             }
         }
 
         stage('Deploy Stage') {
             steps {
-                echo 'Hello, Deployment.'
-                sh 'java -version'
+                echo 'Hello, Docker Deployment.'
+                
             }
         }
     }
