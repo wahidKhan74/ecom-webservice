@@ -8,7 +8,7 @@ pipeline {
     
 
     stages {
-         
+
         stage('Compile Stage') {
             steps {
                 echo '::::: Hello, Compile  :::::'
@@ -31,8 +31,7 @@ pipeline {
             steps {
                 echo ':::::  Hello, Docker Build Stage   :::::'
                 sh '''
-                    sudo -s
-                    docker image build -t ecom-webservice .
+                    sudo docker image build -t ecom-webservice .
                 '''
             }
         }
