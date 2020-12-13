@@ -8,19 +8,28 @@ pipeline {
     stages {
         stage('Compile Stage') {
             steps {
-                echo 'Hello, Compile'
+                echo '::::: Hello, Compile  :::::'
                 withMaven(maven : 'maven3.6.3'){
                     sh 'mvn clean compile'
                 }
             }
         }
         
-        stage('Build Stage') {
+        stage('Mvn Build Stage') {
             steps {
-                echo 'Hello, Maven'
+                echo '::::: Hello, Maven    :::::'
                 withMaven(maven : 'maven3.6.3'){
                     sh 'mvn clean package -DskipTests'
                 }
+            }
+        }
+
+        stage('Docker Build Stage') {
+            steps {
+                echo ':::::  Hello, Docker Build Stage   :::::'
+                sh '''
+                    docker image build -t ecom-webservice .
+                '''
             }
         }
 
