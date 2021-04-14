@@ -8,28 +8,24 @@ pipeline {
     
 
     stages {
-
+        
         stage('Compile Stage') {
             steps {
-                echo '::::: Hello, Compile  :::::'
-                withMaven(maven : 'maven3.6.3'){
-                    sh 'mvn clean compile'
-                }
+                echo '----------------- This is a compile phase ----------'
+                sh 'mvn clean compile'
             }
         }
         
         stage('Mvn Build Stage') {
-            steps {
-                echo '::::: Hello, Maven    :::::'
-                withMaven(maven : 'maven3.6.3'){
-                    sh 'mvn clean package -DskipTests'
-                }
+             steps {
+                echo '----------------- This is a build phase ----------'
+                sh 'mvn clean package -DskipTests'
             }
         }
 
         stage('Docker Build Stage') {
             steps {
-                echo ':::::  Hello, Docker Build Stage   :::::'
+                echo '----------------- This is a build docker image phase ----------'
                 sh '''
                     docker image build -t ecom-webservice .
                 '''
@@ -38,7 +34,7 @@ pipeline {
 
         stage('Deploy Stage') {
             steps {
-                echo 'Hello, Docker Deployment.'
+                echo '----------------- This is a docker deploment phase ----------'
                 sh '''
                  (if  [ $(docker ps -a | grep ecom-webservice | cut -d " " -f1) ]; then \
                         echo $(docker rm -f ecom-webservice); \
