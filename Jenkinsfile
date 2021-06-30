@@ -9,21 +9,21 @@ pipeline {
     // restart jenkins server ->  sudo service jenkins restart
     stages {
         
-        stage('Maven Compile Stage') {
+        stage('Maven Compile') {
             steps {
                 echo '----------------- This is a compile phase ----------'
                 sh 'mvn clean compile'
             }
         }
         
-        stage('Maven Build Stage') {
+        stage('Maven Build') {
              steps {
                 echo '----------------- This is a build phase ----------'
                 sh 'mvn clean package -DskipTests'
             }
         }
 
-        stage('Docker Build Stage') {
+        stage('Docker Build') {
             steps {
                 echo '----------------- This is a build docker image phase ----------'
                 sh '''
@@ -32,7 +32,7 @@ pipeline {
             }
         }
 
-        stage('Docker Deploy Stage') {
+        stage('Docker Deploy') {
             steps {
                 echo '----------------- This is a docker deploment phase ----------'
                 sh '''
