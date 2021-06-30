@@ -9,14 +9,14 @@ pipeline {
     // restart jenkins server ->  sudo service jenkins restart
     stages {
         
-        stage('Compile Stage') {
+        stage('Maven Compile Stage') {
             steps {
                 echo '----------------- This is a compile phase ----------'
                 sh 'mvn clean compile'
             }
         }
         
-        stage('Mvn Build Stage') {
+        stage('Maven Build Stage') {
              steps {
                 echo '----------------- This is a build phase ----------'
                 sh 'mvn clean package -DskipTests'
@@ -32,7 +32,7 @@ pipeline {
             }
         }
 
-        stage('Deploy Stage') {
+        stage('Docker Deploy Stage') {
             steps {
                 echo '----------------- This is a docker deploment phase ----------'
                 sh '''
@@ -42,7 +42,7 @@ pipeline {
                      else \
                     echo OK; \
                  fi;);
-            docker container run --restart always --name ecom-webservice -p 8082:8081 -d ecom-webservice
+            docker container run --restart always --name ecom-webservice -p 8081:8081 -d ecom-webservice
             '''
             }
         }
