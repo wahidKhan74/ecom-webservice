@@ -13,7 +13,7 @@ public class EcomResource {
 	}
 	
 	@GetMapping("/")
-	public String greeting() {
+	public String index() {
 		return "Hello, Welcome ecommerce webservice application";
 	}
 }
