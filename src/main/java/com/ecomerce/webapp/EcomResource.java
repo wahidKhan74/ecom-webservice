@@ -11,4 +11,9 @@ public class EcomResource {
 	public String greeting(@RequestParam(value = "name", defaultValue="World") String name) {
 		return "Hola app is working , on ec2 by user, " + name;
 	}
+	
+	@GetMapping("/")
+	public String greeting() {
+		return "Hello, Welcome ecommerce webservice application";
+	}
 }
