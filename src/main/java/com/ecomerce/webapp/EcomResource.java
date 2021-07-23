@@ -19,6 +19,6 @@ public class EcomResource {
 	
 	@GetMapping("/hello")
 	public String hello() {
-		return "Hello, Welcome ecommerce webservice application !";
+		return "Hello, user, new response !";
 	}
 }
