@@ -9,3 +9,9 @@
 
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+#verify docker version
+sudo docker --version
+sudo docker -v
+
+sudo docker info
