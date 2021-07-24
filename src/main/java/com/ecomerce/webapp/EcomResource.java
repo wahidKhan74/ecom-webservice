@@ -19,6 +19,6 @@ public class EcomResource {
 	
 	@GetMapping("/hello")
 	public String hello() {
-		return "Hello, user, new response !";
+		return "Hello, user, we have sucessfully deploy CI/CD pipeline";
 	}
 }
