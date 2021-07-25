@@ -1,1 +1,0 @@
-Sample text fle for build trigger.
