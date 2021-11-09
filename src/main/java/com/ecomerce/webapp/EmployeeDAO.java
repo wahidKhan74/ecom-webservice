@@ -1,3 +1,5 @@
+package com.ecomerce.webapp;
+
 import org.springframework.stereotype.Repository;
  
 import com.howtodoinjava.rest.model.Employee;
