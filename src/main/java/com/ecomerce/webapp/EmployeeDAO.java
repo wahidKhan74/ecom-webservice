@@ -2,8 +2,8 @@ package com.ecomerce.webapp;
 
 import org.springframework.stereotype.Repository;
  
-import com.howtodoinjava.rest.model.Employee;
-import com.howtodoinjava.rest.model.Employees;
+import com.ecomerce.webapp.Employee;
+import com.ecomerce.webapp.Employees;
  
 @Repository
 public class EmployeeDAO 
