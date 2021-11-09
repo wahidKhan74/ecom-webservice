@@ -1,4 +1,4 @@
-#Jenkins install in ubuntu
+# Jenkins install in ubuntu
 
 # jdk install
 sudo apt install default-jdk -y
@@ -12,14 +12,14 @@ sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sou
 sudo apt-get update
 sudo apt-get install jenkins
 
-#verify jenkins status
+# verify jenkins status
 sudo service jenkins status
 
-#start jenkibns server
+# start jenkibns server
 sudo service jenkins start
 
-#stop jenkibns server
+# stop jenkibns server
 sudo service jenkins stop
 
-#restart jenkibns server
+# restart jenkibns server
 sudo service jenkins restart
