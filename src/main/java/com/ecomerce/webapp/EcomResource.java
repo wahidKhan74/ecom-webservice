@@ -14,7 +14,7 @@ public class EcomResource {
 	
 	@GetMapping("/")
 	public String index() {
-		return "Hello, Welcome ecommerce webservice application ! deployed with ci cd pipeine";
+		return "Hello, Welcome ecommerce webservice application ! ";
 	}
 	
 	@GetMapping("/hello")
