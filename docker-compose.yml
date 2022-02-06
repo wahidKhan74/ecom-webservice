@@ -24,12 +24,15 @@ services:
       - ecom-postgres
 
   ecom-ui:
-    build: ./ecom-ui
-    container_name: ecom-ui
-    ports:
-      - 4200:80
-    links:
-      - ecom-app
+    image: "angular-alpine:0.0.1"
+          container_name: angular 
+          tty: true
+          stdin_open: true
+          networks:
+            app_net:
+            ipv4_address: 172.16.238.05
+          depends_on:
+            - ecom-app
 
 
 volumes:
