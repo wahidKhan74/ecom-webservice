@@ -1,0 +1,36 @@
+version: '3'
+services:
+
+  ecom-postgres:
+    image: "postgres:9.6-alpine"
+    container_name: ecom-postgres
+    volumes:
+      - ecom-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB:ecom
+      - POSTGRES_USER:ecom
+      - POSTGRES_PASSWORD:ecom
+
+  ecom-app:
+    build: ./ecom-app
+    container_name: ecom-app
+    environment:
+      - DB_SERVER=ecom-postgres
+    ports:
+      - 8080:8080
+    links:
+      - ecom-postgres
+
+  ecom-ui:
+    build: ./ecom-ui
+    container_name: ecom-ui
+    ports:
+      - 4200:80
+    links:
+      - ecom-app
+
+
+volumes:
+  ecom-data:
