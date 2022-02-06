@@ -25,7 +25,7 @@ services:
 
   ecom-ui:
     image: "angular-alpine:0.0.1"
-          container_name: angular 
+          container_name: ecom-ui 
           tty: true
           stdin_open: true
           networks:
@@ -37,3 +37,11 @@ services:
 
 volumes:
   ecom-data:
+  
+networks:
+        app_net:
+          driver: bridge
+        ipam:
+        driver: default
+        config:
+          - subnet: 172.16.238.0/24
