@@ -16,7 +16,6 @@ public class EmployeeDAO
         list.getEmployeeList().add(new Employee(2, "David", "Kameron", "titanic@gmail.com"));
         list.getEmployeeList().add(new Employee(3, "Sam", "Kameron", "sam@gmail.com"));
         list.getEmployeeList().add(new Employee(4, "John", "Smith", "john@gmail.com"));
-        list.getEmployeeList().add(new Employee(5, "Devesh", "Singh", "deveshtest@gmail.com"));
     }
      
     public Employees getAllEmployees() 
